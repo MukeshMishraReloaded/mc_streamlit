@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 url = "https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/001/428/original/bike_sharing.csv?1642089089"
 df_yulu = pd.read_csv(url)
 #df_yulu
-
+st.set_option('deprecation.showPyplotGlobalUse', False)
 # Plotting a histogram
 st.subheader('Histogram: count')
 plt.figure(figsize=(10,6))
