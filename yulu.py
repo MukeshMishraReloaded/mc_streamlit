@@ -45,8 +45,6 @@ st.dataframe(df)
 
 # Time range --> minimum and maximum values in the 'datetime' column
 df_yulu['datetime'] = pd.to_datetime(df_yulu['datetime'])
-print("Minimum Time: ", df_yulu['datetime'].min())
-print("Maximum Time: ", df_yulu['datetime'].max())
 df_time = df_yulu
 #Add Month and MonthandYear columns to a new dataframe df_time
 df_time['Month'] = df_yulu['datetime'].dt.month
@@ -61,6 +59,6 @@ sns.lineplot(data=df_time, x='MonthandYear', y='casual', color='b')
 plt.xticks(rotation = 90, fontsize = 8)
 plt.ylabel("Count of cycles rented" , fontsize = 10)
 plt.grid()
-plt.plot() 
+plt.show() 
 st.pyplot(fig)
 
