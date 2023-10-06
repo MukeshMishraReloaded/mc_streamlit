@@ -20,18 +20,20 @@ import matplotlib.pyplot as plt
 url = "https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/001/428/original/bike_sharing.csv?1642089089"
 df_yulu = pd.read_csv(url)
 
-# Display line chart
-
 st.write("""
             # Yulu data analyzer """)
 
 ## get data for Yulu bikes
-
+col1, col2 = st.columns(2)
+with col1:
 s = st.selectbox(
-    'Which season do you want to analyse?',
+    'Which season do you want to select?',
     ('1', '2', '3', '4'))
-
+with col2:
+w = st.selectbox(
+    'Which weather do you want to select?',
+    ('1', '2', '3', '4'))
 st.write(f"""
-    ###  Season {s}'s - renting of bikes data """)
+    ###  Season {s}'s and weather {w}'s data for - renting of Yulu bikes: """)
 
 st.dataframe(df_yulu[['casual', 'registered', 'count']])
