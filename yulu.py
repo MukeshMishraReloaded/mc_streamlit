@@ -36,4 +36,4 @@ with col2:
 st.write(f"""
     ###  Season {s}'s and weather {w}'s data for - renting of Yulu bikes: """)
 
-st.dataframe((df_yulu[df_yulu['season'] == s) & ((df_yulu[df_yulu['weather'] == w))][['casual', 'registered', 'count']])
+st.dataframe((df_yulu[(df_yulu['season'] == s) & (df_yulu['weather'] == w)][['casual', 'registered', 'count']])
