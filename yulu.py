@@ -45,7 +45,7 @@ st.dataframe(df)
 fig = plt.figure(figsize = (10, 5))
 # Creating the pie-chart
 plt.pie(x = total_count_by_weather_season['count'],
-        explode = [0.025, 0.025, 0.025, 0.025],
+        explode = [0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025],
         autopct = '%.2f%%',
         textprops = {'fontsize' : 14,
                  #  'fontstyle' : 'oblique',
