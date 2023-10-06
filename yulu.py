@@ -24,7 +24,7 @@ st.write("""
             # Yulu data analyzer """)
 
 def format_func(option):
-    return option.to_int()
+    return int(option)
     
 ## get data for Yulu bikes
 col1, col2 = st.columns(2)
