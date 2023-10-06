@@ -27,16 +27,13 @@ st.write("""
 
 ## get data for Yulu bikes
 
-season = st.selectbox(
+s = st.selectbox(
     'Which season do you want to analyse?',
     ('1', '2', '3', '4'))
 
 st.write(f"""
     ###  Season {season}'s - renting of bikes data """)
 
-df=df_yulu[df_yulu['season'] == season][['casual', 'registered', 'count']]
+df=df_yulu[df_yulu['season'] == s][['casual', 'registered', 'count']]
+
 st.dataframe(df)
-st.write(df)
-# Plotting a histogram
-chart_data = df
-st.scatter_chart(chart_data)
