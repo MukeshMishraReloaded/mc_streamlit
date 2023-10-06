@@ -36,7 +36,7 @@ st.write(f"""
 
 df=df_yulu[df_yulu['season'] == season][['casual', 'registered', 'count']]
 st.dataframe(df)
-st.line_chart(df)
+st.write(df)
 # Plotting a histogram
 chart_data = df
 st.scatter_chart(chart_data)
