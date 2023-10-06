@@ -36,4 +36,9 @@ with col2:
 st.write(f"""
     ###  Season {s}'s and weather {w}'s data for - renting of Yulu bikes: """)
 
-st.dataframe( df_yulu[ (df_yulu['season'] == s) & (df_yulu['weather'] == w) ][['casual', 'registered', 'count']] )
+total_count_by_weather_season=df_yulu.groupby(['weather', 'season'])[['count', 'registered', 'casual']].sum().reset_index()
+
+df=total_count_by_weather_season[ (total_count_by_weather_season['season'] == s) & (total_count_by_weather_season['weather'] == w) ]
+
+#print the filtered dataframe
+st.dataframe(df)
