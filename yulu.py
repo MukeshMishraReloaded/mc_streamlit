@@ -43,15 +43,10 @@ df=total_count_by_weather_season[ (total_count_by_weather_season['season'] == s)
 #print the filtered dataframe
 st.dataframe(df)
 fig = plt.figure(figsize = (10, 5))
-# Creating the pie-chart
-plt.pie(x = total_count_by_weather_season['count'],
-        explode = [0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025],
-        autopct = '%.2f%%',
-        textprops = {'fontsize' : 14,
-                 #  'fontstyle' : 'oblique',
-                   'fontfamily' : 'serif',
-                   'fontweight' : 500})
-
+plt.bar(['season', 'weather'], 'count')
+plt.xlabel("Season and Weather")
+plt.ylabel("Total Users")
+plt.title("Total Casual and Registered Users")
 plt.plot()     # displaying the plot
 st.pyplot(fig)
 
