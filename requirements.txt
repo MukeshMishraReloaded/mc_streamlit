@@ -1,2 +1,5 @@
 streamlit
-yfinance
+numpy
+pandas
+seaborn
+matplotlib.pyplot
