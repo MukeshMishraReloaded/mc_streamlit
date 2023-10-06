@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyPHKn0LpaxfToe3NJr8rOL2",
+      "authorship_tag": "ABX9TyPyLjSaY0Pm9NInHhdbEi1m",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -28,7 +28,7 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 5,
+      "execution_count": 28,
       "metadata": {
         "id": "XAZ5MTKQ4aEX"
       },
@@ -39,9 +39,6 @@
         "import warnings\n",
         "warnings.filterwarnings(\"ignore\")\n",
         "import pandas as pd\n",
-        "import matplotlib.pyplot as plt\n",
-        "import plotly.express as px\n",
-        "import seaborn as sns\n",
         "import numpy as np"
       ]
     },
@@ -57,9 +54,9 @@
           "height": 423
         },
         "id": "tox4oHBj5l2g",
-        "outputId": "365aab3d-df42-4ff9-e059-1c521f461baa"
+        "outputId": "94f21ad1-040e-4aea-fa53-9ebda1cd4529"
       },
-      "execution_count": 7,
+      "execution_count": 29,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -95,7 +92,7 @@
             ],
             "text/html": [
               "\n",
-              "  <div id=\"df-c3cf723d-f9d1-4314-a2b8-3fb4e4d951d9\" class=\"colab-df-container\">\n",
+              "  <div id=\"df-e9435687-bac5-4ce5-9f0b-7f87c56e87d2\" class=\"colab-df-container\">\n",
               "    <div>\n",
               "<style scoped>\n",
               "    .dataframe tbody tr th:only-of-type {\n",
@@ -301,7 +298,7 @@
               "    <div class=\"colab-df-buttons\">\n",
               "\n",
               "  <div class=\"colab-df-container\">\n",
-              "    <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-c3cf723d-f9d1-4314-a2b8-3fb4e4d951d9')\"\n",
+              "    <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-e9435687-bac5-4ce5-9f0b-7f87c56e87d2')\"\n",
               "            title=\"Convert this dataframe to an interactive table.\"\n",
               "            style=\"display:none;\">\n",
               "\n",
@@ -353,12 +350,12 @@
               "\n",
               "    <script>\n",
               "      const buttonEl =\n",
-              "        document.querySelector('#df-c3cf723d-f9d1-4314-a2b8-3fb4e4d951d9 button.colab-df-convert');\n",
+              "        document.querySelector('#df-e9435687-bac5-4ce5-9f0b-7f87c56e87d2 button.colab-df-convert');\n",
               "      buttonEl.style.display =\n",
               "        google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
               "\n",
               "      async function convertToInteractive(key) {\n",
-              "        const element = document.querySelector('#df-c3cf723d-f9d1-4314-a2b8-3fb4e4d951d9');\n",
+              "        const element = document.querySelector('#df-e9435687-bac5-4ce5-9f0b-7f87c56e87d2');\n",
               "        const dataTable =\n",
               "          await google.colab.kernel.invokeFunction('convertToInteractive',\n",
               "                                                    [key], {});\n",
@@ -378,8 +375,8 @@
               "  </div>\n",
               "\n",
               "\n",
-              "<div id=\"df-d8c2bf1e-f84a-4383-b230-c1a03c64f45e\">\n",
-              "  <button class=\"colab-df-quickchart\" onclick=\"quickchart('df-d8c2bf1e-f84a-4383-b230-c1a03c64f45e')\"\n",
+              "<div id=\"df-2a4dfb56-fe13-4db3-b972-54caf93795c7\">\n",
+              "  <button class=\"colab-df-quickchart\" onclick=\"quickchart('df-2a4dfb56-fe13-4db3-b972-54caf93795c7')\"\n",
               "            title=\"Suggest charts.\"\n",
               "            style=\"display:none;\">\n",
               "\n",
@@ -498,7 +495,7 @@
               "    }\n",
               "    (() => {\n",
               "      let quickchartButtonEl =\n",
-              "        document.querySelector('#df-d8c2bf1e-f84a-4383-b230-c1a03c64f45e button');\n",
+              "        document.querySelector('#df-2a4dfb56-fe13-4db3-b972-54caf93795c7 button');\n",
               "      quickchartButtonEl.style.display =\n",
               "        google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
               "    })();\n",
@@ -509,7 +506,7 @@
             ]
           },
           "metadata": {},
-          "execution_count": 7
+          "execution_count": 29
         }
       ]
     },
@@ -525,9 +522,9 @@
           "height": 52
         },
         "id": "90rw-BnKc1Gy",
-        "outputId": "69f36d9d-417e-41d4-b7ae-30a2b7af5fed"
+        "outputId": "e2ababd3-4878-4805-a9d6-192480fd9b90"
       },
-      "execution_count": 12,
+      "execution_count": 30,
       "outputs": [
         {
           "output_type": "stream",
@@ -547,7 +544,7 @@
             }
           },
           "metadata": {},
-          "execution_count": 12
+          "execution_count": 30
         }
       ]
     },
@@ -561,9 +558,9 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "_bUe6a3EbPJT",
-        "outputId": "f78601c3-b7b4-455b-bb9f-4ce02754d13b"
+        "outputId": "954a5818-c3a5-4d96-edfa-9f89314bde1d"
       },
-      "execution_count": 17,
+      "execution_count": 31,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -573,7 +570,7 @@
             ]
           },
           "metadata": {},
-          "execution_count": 17
+          "execution_count": 31
         }
       ]
     },
@@ -610,9 +607,9 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "9YVvR0pL5jDK",
-        "outputId": "e8f073e3-0a98-4a86-ad76-998dfba139ba"
+        "outputId": "c30fdec5-929d-430f-b696-f5c85fed6975"
       },
-      "execution_count": 26,
+      "execution_count": 32,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -622,7 +619,7 @@
             ]
           },
           "metadata": {},
-          "execution_count": 26
+          "execution_count": 32
         }
       ]
     }
