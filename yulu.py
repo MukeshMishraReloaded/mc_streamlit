@@ -43,7 +43,7 @@ df=total_count_by_weather_season[ (total_count_by_weather_season['season'] == s)
 #print the filtered dataframe
 st.dataframe(df)
 fig = plt.figure(figsize = (10, 5))
-sns.barplot(x=['season', 'weather'], y='count', data=df)
+sns.barplot(x=['season', 'weather'], y='count', data=df_yulu)
 plt.xlabel("Season and Weather")
 plt.ylabel("Total Users")
 plt.title("Total Casual and Registered Users")
