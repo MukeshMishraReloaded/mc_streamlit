@@ -32,6 +32,6 @@ s = st.selectbox(
     ('1', '2', '3', '4'))
 
 st.write(f"""
-    ###  Season {season}'s - renting of bikes data """)
+    ###  Season {s}'s - renting of bikes data """)
 
 st.dataframe(df_yulu[df_yulu['season'] == s][['casual', 'registered', 'count']])
