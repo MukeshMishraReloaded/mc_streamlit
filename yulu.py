@@ -26,13 +26,13 @@ st.write("""
 ## get data for Yulu bikes
 col1, col2 = st.columns(2)
 with col1:
-s = st.selectbox(
-    'Which season do you want to select?',
-    ('1', '2', '3', '4'))
+    s = st.selectbox(
+        'Which season do you want to select?',
+            ('1', '2', '3', '4'))
 with col2:
-w = st.selectbox(
-    'Which weather do you want to select?',
-    ('1', '2', '3', '4'))
+    w = st.selectbox(
+        'Which weather do you want to select?',
+            ('1', '2', '3', '4'))
 st.write(f"""
     ###  Season {s}'s and weather {w}'s data for - renting of Yulu bikes: """)
 
