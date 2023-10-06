@@ -22,10 +22,8 @@ df_yulu = pd.read_csv(url)
 
 st.write("""
             # Yulu data analyzer """)
-
 def format_func(option):
-    k=int(option)
-    st.write(k, type(k))
+    st.write(int(option), type(int(option)))
     return k
     
 ## get data for Yulu bikes
