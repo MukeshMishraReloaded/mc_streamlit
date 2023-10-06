@@ -34,4 +34,4 @@ s = st.selectbox(
 st.write(f"""
     ###  Season {s}'s - renting of bikes data """)
 
-st.dataframe(df_yulu[df_yulu['season'] == {s}][['casual', 'registered', 'count']])
+st.dataframe(df_yulu[df_yulu['season'] == 1][['casual', 'registered', 'count']])
