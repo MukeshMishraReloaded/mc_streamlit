@@ -23,16 +23,19 @@ df_yulu = pd.read_csv(url)
 st.write("""
             # Yulu data analyzer """)
 
+def format_func(option):
+    return option.to_int()
+    
 ## get data for Yulu bikes
 col1, col2 = st.columns(2)
 with col1:
     s = st.selectbox(
         'Which season do you want to select?',
-            ('1', '2', '3', '4'))
+            ('1', '2', '3', '4'), format_func=format_func)
 with col2:
     w = st.selectbox(
         'Which weather do you want to select?',
-            ('1', '2', '3', '4'))
+            ('1', '2', '3', '4'), format_func=format_func)
 st.write(f"""
     ###  Season {s}'s and weather {w}'s data for - renting of Yulu bikes: """)
 
