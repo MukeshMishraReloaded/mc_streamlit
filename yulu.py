@@ -51,14 +51,7 @@ df_time['Month'] = df_yulu['datetime'].dt.month
 df_time['MonthandYear'] = df_yulu['datetime'].dt.to_period('M').astype('string')
 
 #Lineplot for time analysis
-fig = plt.figure(figsize=(12,4))
-plt.legend(["Total Users", "Registered Users", "Casual Users"], loc = 'upper left', frameon = True)
-sns.lineplot(data=df_time, x='MonthandYear', y='count', color='r')
-sns.lineplot(data=df_time, x='MonthandYear', y='registered', color='g')
-sns.lineplot(data=df_time, x='MonthandYear', y='casual', color='b')
-plt.xticks(rotation = 90, fontsize = 8)
-plt.ylabel("Count of cycles rented" , fontsize = 10)
-plt.grid()
-plt.show() 
-st.pyplot(fig)
+st.line_chart(df_time, x='MonthandYear', y='count')
+st.line_chart(df_time, x='MonthandYear', y='registered')
+st.line_chart(df_time, x='MonthandYear', y='casual')
 
