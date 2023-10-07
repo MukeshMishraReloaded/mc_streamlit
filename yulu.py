@@ -43,13 +43,6 @@ df=total_count_by_weather_season[ (total_count_by_weather_season['season'] == s)
 #print the filtered dataframe
 st.dataframe(df)
 
-# Time range --> minimum and maximum values in the 'datetime' column
-df_yulu['datetime'] = pd.to_datetime(df_yulu['datetime'])
-df_time = df_yulu
-#Add Month and MonthandYear columns to a new dataframe df_time
-df_time['Month'] = df_yulu['datetime'].dt.month
-df_time['MonthandYear'] = df_yulu['datetime'].dt.to_period('M').astype('string')
-
 #Detect outliers using boxplot(Univariate Analysis)
 fig, axis= plt.subplots(3, 2, figsize=(13,12))
 sns.histplot(df_yulu['humidity'], kde=True, ax=axis[0,0], color='r')
@@ -83,6 +76,13 @@ st.write(f"""
     2. 'temp' and 'atemp' dont seem to have any outliers.
     3. 'count', 'registered', 'casual' also have a lot of outlier values.""")
 
+# Time range --> minimum and maximum values in the 'datetime' column
+df_yulu['datetime'] = pd.to_datetime(df_yulu['datetime'])
+df_time = df_yulu
+#Add Month and MonthandYear columns to a new dataframe df_time
+df_time['Month'] = df_yulu['datetime'].dt.month
+df_time['MonthandYear'] = df_yulu['datetime'].dt.to_period('M').astype('string')
+
 #Lineplot for time analysis
 plt.figure(figsize=(12,4))
 plt.legend(["Total Users", "Registered Users", "Casual Users"], loc = 'upper left', frameon = True)
@@ -91,6 +91,7 @@ sns.lineplot(data=df_time, x='MonthandYear', y='registered', color='g')
 sns.lineplot(data=df_time, x='MonthandYear', y='casual', color='b')
 plt.xticks(rotation = 90, fontsize = 8)
 plt.ylabel("Count of cycles rented" , fontsize = 10)
+plt.grid()
 plt.show()
 st.pyplot(fig)
 
