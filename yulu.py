@@ -50,7 +50,7 @@ elif w == 3:
 elif w == 4:
     weather = 'Heavy rain or snow'
 st.write(f"""
-    ###  Season {season} and weather {weather} data for - renting of Yulu bikes: """)
+    ###  Season "{season}" and weather "{weather}" data for - renting of Yulu bikes: """)
 
 total_count_by_weather_season=df_yulu.groupby(['weather', 'season'])[['count', 'registered', 'casual']].sum().reset_index()
 
