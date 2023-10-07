@@ -33,8 +33,16 @@ with col2:
     w = st.selectbox(
         'Which weather do you want to select?',
             (1, 2, 3, 4))
+if s == 1:
+    season='spring'
+elif s == 2:
+    season='summer'
+elif s == 3:
+    season = 'fall'
+elif s == 4:
+    season = 'winter'
 st.write(f"""
-    ###  Season {s}'s and weather {w}'s data for - renting of Yulu bikes: """)
+    ###  Season {season}'s and weather {w}'s data for - renting of Yulu bikes: """)
 
 total_count_by_weather_season=df_yulu.groupby(['weather', 'season'])[['count', 'registered', 'casual']].sum().reset_index()
 
