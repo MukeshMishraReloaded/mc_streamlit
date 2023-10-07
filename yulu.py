@@ -21,14 +21,14 @@ url = "https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/001/428/or
 df_yulu = pd.read_csv(url)
 
 st.write(f"""
-            # Yulu bikes data 
+            # df_yulu.head(2)  
             
-                                """)
-st.write(f"""
-            # df_yulu.head(2)  """)
+            """)
 
 st.dataframe(df_yulu.head(2))
-
+st.write(f"""
+            # Yulu bikes data 
+                                """)
 ## get data for Yulu bikes
 col1, col2 = st.columns(2)
 with col1:
