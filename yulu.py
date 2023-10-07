@@ -20,11 +20,11 @@ import matplotlib.pyplot as plt
 url = "https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/001/428/original/bike_sharing.csv?1642089089"
 df_yulu = pd.read_csv(url)
 
-st.write("""
+st.write(f"""
             # Yulu bikes data 
             
                                 """)
-st.write("""
+st.write(f"""
             # df_yulu.head(2)  """)
 
 st.dataframe(df_yulu.head(2))
