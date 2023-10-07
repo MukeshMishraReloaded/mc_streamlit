@@ -20,10 +20,14 @@ import matplotlib.pyplot as plt
 url = "https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/001/428/original/bike_sharing.csv?1642089089"
 df_yulu = pd.read_csv(url)
 
-st.dataframe(df_yulu.head(5))
-
 st.write("""
-            # Yulu bikes data """)
+            # Yulu bikes data 
+            
+                                """)
+st.write("""
+            # df_yulu.head(2)  """)
+
+st.dataframe(df_yulu.head(2))
 
 ## get data for Yulu bikes
 col1, col2 = st.columns(2)
