@@ -67,9 +67,9 @@ plt.show()
 st.pyplot(fig)
 
 df.write("""
-    ###INSIGHT:
-    ###1) Neither 'registered' or 'casual' users data follow gaussian distribution.
-    ###2) 'humidity' or 'temp' follow somewhat of a typical distribution, although they too can't be considered normal just by looking at the visual charts.
+        INSIGHT:
+        1. Neither 'registered' or 'casual' users data follow gaussian distribution.
+        2. 'humidity' or 'temp' follow somewhat of a typical distribution, although they too can't be considered normal just by looking at the visual charts.
     """)
 
 #Detect outliers using boxplot(Univariate Analysis)
