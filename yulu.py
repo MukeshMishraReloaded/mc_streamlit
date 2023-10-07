@@ -66,11 +66,9 @@ sns.histplot(df_yulu, x="casual", kde=True, ax=axis[2,1], color='r')
 plt.show()
 st.pyplot(fig)
 
-df.write("""
-        INSIGHT:
-        1. Neither 'registered' or 'casual' users data follow gaussian distribution.
-        2. 'humidity' or 'temp' follow somewhat of a typical distribution, although they too can't be considered normal just by looking at the visual charts.
-    """)
+df.write(""" INSIGHT: """)
+df.write(""" 1. Neither 'registered' or 'casual' users data follow gaussian distribution. """)
+df.write(""" 2. 'humidity' or 'temp' follow somewhat of a typical distribution, although they too can't be considered normal just by looking at the visual charts.""")
 
 #Detect outliers using boxplot(Univariate Analysis)
 fig, axis= plt.subplots(3, 2, figsize=(13,10))
@@ -83,10 +81,9 @@ sns.boxplot(data=df_yulu, x="humidity", orient='h', ax=axis[2,0], color='g')
 sns.boxplot(data=df_yulu, x="windspeed", orient='h', ax=axis[2,1], color='g')
 plt.show()
 st.pyplot(fig)
-df.write("""
-    ###1) 'Windspeed' has many outlier values, whereas 'humidity' has a few.
-    ###2) 'temp' and 'atemp' dont seem to have any outliers.
-    ###3) 'count', 'registered', 'casual' also have a lot of outlier values.
-    """)
+df.write(""" INSIGHT:""")
+df.write(""" 1. 'Windspeed' has many outlier values, whereas 'humidity' has a few.""")
+df.write(""" 2. 'temp' and 'atemp' dont seem to have any outliers.""")
+df.write(""" 3. 'count', 'registered', 'casual' also have a lot of outlier values.""")
 
 
