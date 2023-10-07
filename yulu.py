@@ -43,14 +43,15 @@ df=total_count_by_weather_season[ (total_count_by_weather_season['season'] == s)
 #print the filtered dataframe
 st.dataframe(df)
 
+df_t=df_yulu[ (df_yulu['season'] == s) & (df_yulu['weather'] == w) ]
 #Detect outliers using boxplot(Univariate Analysis)
 fig, axis= plt.subplots(3, 2, figsize=(13,12))
-sns.histplot(df_yulu['humidity'], kde=True, ax=axis[0,0], color='r')
-sns.histplot(df_yulu['temp'], kde=True, ax=axis[0,1], color='b')
-sns.histplot(df_yulu['atemp'], kde=True, ax=axis[1,0], color='g')
-sns.histplot(df_yulu['windspeed'], kde=True, ax=axis[1,1], color='r')
-sns.histplot(df_yulu["registered"], kde=True, ax=axis[2,0], color='b')
-sns.histplot(df_yulu, x="casual", kde=True, ax=axis[2,1], color='r')
+sns.histplot(df_t['humidity'], kde=True, ax=axis[0,0], color='r')
+sns.histplot(df_t['temp'], kde=True, ax=axis[0,1], color='b')
+sns.histplot(df_t['atemp'], kde=True, ax=axis[1,0], color='g')
+sns.histplot(df_t['windspeed'], kde=True, ax=axis[1,1], color='r')
+sns.histplot(df_t["registered"], kde=True, ax=axis[2,0], color='b')
+sns.histplot(df_t["casual"], kde=True, ax=axis[2,1], color='r')
 plt.show()
 st.pyplot(fig)
 
@@ -61,13 +62,13 @@ st.write(f"""
 
 #Detect outliers using boxplot(Univariate Analysis)
 fig, axis= plt.subplots(3, 2, figsize=(13,10))
-#sns.boxplot(data=df_yulu, x="count", orient='h', ax=axis[0,0], color='r')
-sns.boxplot(data=df_yulu, x="registered", orient='h', ax=axis[0,0], color='r')
-sns.boxplot(data=df_yulu, x="casual", orient='h', ax=axis[0,1], color='r')
-sns.boxplot(data=df_yulu, x="temp", orient='h', ax=axis[1,0], color='b')
-sns.boxplot(data=df_yulu, x="atemp", orient='h', ax=axis[1,1], color='b')
-sns.boxplot(data=df_yulu, x="humidity", orient='h', ax=axis[2,0], color='g')
-sns.boxplot(data=df_yulu, x="windspeed", orient='h', ax=axis[2,1], color='g')
+#sns.boxplot(data=df_t, x="count", orient='h', ax=axis[0,0], color='r')
+sns.boxplot(data=df_t, x="registered", orient='h', ax=axis[0,0], color='r')
+sns.boxplot(data=df_t, x="casual", orient='h', ax=axis[0,1], color='r')
+sns.boxplot(data=df_t, x="temp", orient='h', ax=axis[1,0], color='b')
+sns.boxplot(data=df_t, x="atemp", orient='h', ax=axis[1,1], color='b')
+sns.boxplot(data=df_t, x="humidity", orient='h', ax=axis[2,0], color='g')
+sns.boxplot(data=df_t, x="windspeed", orient='h', ax=axis[2,1], color='g')
 plt.show()
 st.pyplot(fig)
 st.write(f"""
@@ -94,4 +95,11 @@ plt.ylabel("Count of cycles rented" , fontsize = 10)
 plt.grid()
 plt.show()
 st.pyplot(fig)
+
+st.write(f"""
+    INSIGHT:
+    There is clear seasonality in demand for Yulu bikes around the year.
+        1. The demand for Yulu bikes is pretty low in the beginning of year from where it starts rising before it peaks in June / July.
+        2. From July to the end of year, it goes down somewhat.""")
+
 
