@@ -65,3 +65,17 @@ sns.histplot(df_yulu["registered"], kde=True, ax=axis[2,0], color='b')
 sns.histplot(df_yulu, x="casual", kde=True, ax=axis[2,1], color='r')
 plt.show()
 st.pyplot(fig)
+
+#Detect outliers using boxplot(Univariate Analysis)
+fig, axis= plt.subplots(3, 2, figsize=(13,10))
+#sns.boxplot(data=df_yulu, x="count", orient='h', ax=axis[0,0], color='r')
+sns.boxplot(data=df_yulu, x="registered", orient='h', ax=axis[0,0], color='r')
+sns.boxplot(data=df_yulu, x="casual", orient='h', ax=axis[0,1], color='r')
+sns.boxplot(data=df_yulu, x="temp", orient='h', ax=axis[1,0], color='b')
+sns.boxplot(data=df_yulu, x="atemp", orient='h', ax=axis[1,1], color='b')
+sns.boxplot(data=df_yulu, x="humidity", orient='h', ax=axis[2,0], color='g')
+sns.boxplot(data=df_yulu, x="windspeed", orient='h', ax=axis[2,1], color='g')
+plt.show()
+st.pyplot(fig)
+
+
