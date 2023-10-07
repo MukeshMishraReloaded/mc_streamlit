@@ -50,17 +50,6 @@ df_time = df_yulu
 df_time['Month'] = df_yulu['datetime'].dt.month
 df_time['MonthandYear'] = df_yulu['datetime'].dt.to_period('M').astype('string')
 
-#Lineplot for time analysis
-plt.figure(figsize=(12,4))
-plt.legend(["Total Users", "Registered Users", "Casual Users"], loc = 'upper left', frameon = True)
-sns.lineplot(data=df_time, x='MonthandYear', y='count', color='r')
-sns.lineplot(data=df_time, x='MonthandYear', y='registered', color='g')
-sns.lineplot(data=df_time, x='MonthandYear', y='casual', color='b')
-plt.xticks(rotation = 90, fontsize = 8)
-plt.ylabel("Count of cycles rented" , fontsize = 10)
-plt.show()
-st.pyplot(fig)
-
 #Detect outliers using boxplot(Univariate Analysis)
 fig, axis= plt.subplots(3, 2, figsize=(13,12))
 sns.histplot(df_yulu['humidity'], kde=True, ax=axis[0,0], color='r')
@@ -72,9 +61,10 @@ sns.histplot(df_yulu, x="casual", kde=True, ax=axis[2,1], color='r')
 plt.show()
 st.pyplot(fig)
 
-st.write(f""" INSIGHT: """)
-st.write(f""" 1. Neither 'registered' or 'casual' users data follow gaussian distribution. """)
-st.write(f""" 2. 'humidity' or 'temp' follow somewhat of a typical distribution, although they too can't be considered normal just by looking at the visual charts.""")
+st.write(f""" 
+    INSIGHT:
+    1. Neither 'registered' or 'casual' users data follow gaussian distribution.
+    2. 'humidity' or 'temp' follow somewhat of a typical distribution, although they too can't be considered normal just by looking at the visual charts.""")
 
 #Detect outliers using boxplot(Univariate Analysis)
 fig, axis= plt.subplots(3, 2, figsize=(13,10))
@@ -87,7 +77,20 @@ sns.boxplot(data=df_yulu, x="humidity", orient='h', ax=axis[2,0], color='g')
 sns.boxplot(data=df_yulu, x="windspeed", orient='h', ax=axis[2,1], color='g')
 plt.show()
 st.pyplot(fig)
-st.write(f""" INSIGHT:""")
-st.write(f""" 1. 'Windspeed' has many outlier values, whereas 'humidity' has a few.""")
-st.write(f""" 2. 'temp' and 'atemp' dont seem to have any outliers.""")
-st.write(f""" 3. 'count', 'registered', 'casual' also have a lot of outlier values.""")
+st.write(f"""
+    INSIGHT:
+    1. 'Windspeed' has many outlier values, whereas 'humidity' has a few.
+    2. 'temp' and 'atemp' dont seem to have any outliers.
+    3. 'count', 'registered', 'casual' also have a lot of outlier values.""")
+
+#Lineplot for time analysis
+plt.figure(figsize=(12,4))
+plt.legend(["Total Users", "Registered Users", "Casual Users"], loc = 'upper left', frameon = True)
+sns.lineplot(data=df_time, x='MonthandYear', y='count', color='r')
+sns.lineplot(data=df_time, x='MonthandYear', y='registered', color='g')
+sns.lineplot(data=df_time, x='MonthandYear', y='casual', color='b')
+plt.xticks(rotation = 90, fontsize = 8)
+plt.ylabel("Count of cycles rented" , fontsize = 10)
+plt.show()
+st.pyplot(fig)
+
