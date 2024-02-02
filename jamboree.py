@@ -60,7 +60,12 @@ df=df_jamboree[(df_jamboree['University Rating'] == r1) & (df_jamboree['Research
 
 #print the filtered dataframe
 st.dataframe(df)
-
+#Converting Research, SOP, LOR and Uni. Rating as categorical values
+df_jamboree['Research'] = df_jamboree['Research'].astype('category')
+df_jamboree['SOP'] = df_jamboree['SOP'].astype('category')
+df_jamboree['LOR'] = df_jamboree['LOR'].astype('category')
+df_jamboree['University Rating']=df_jamboree['University Rating'].astype('category')
+cat_cols = df_jamboree.select_dtypes(include=['category', 'object']).columns
 # Univariate Analysis - Distribution of continuous variables
 num_cols = df.select_dtypes(include=['int64', 'float64']).columns
 print(num_cols)
