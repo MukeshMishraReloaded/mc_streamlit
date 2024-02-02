@@ -10,8 +10,6 @@ Original file is located at
 import datetime
 import math
 import streamlit as st
-import warnings
-warnings.filterwarnings("ignore")
 import pandas as pd
 import numpy as np
 import seaborn as sns
