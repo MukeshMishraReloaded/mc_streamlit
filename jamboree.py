@@ -55,7 +55,7 @@ with col4:
 st.write(f"""
     ###  CGPA, GRE Score, TOEFL Score, Chance of Admit - data for - Jamboree students: """)
 
-df=df_jamboree[(df_jamboree['University Rating'] == r1) and (df_jamboree['Research'] == r2) and (df_jamboree['LOR'] == l) and (df_jamboree['SOP'] == s)]
+df=df_jamboree[(df_jamboree['University Rating'] == r1) & (df_jamboree['Research'] == r2) & (df_jamboree['LOR'] == l) & (df_jamboree['SOP'] == s)]
 
 #print the filtered dataframe
 st.dataframe(df)
