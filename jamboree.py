@@ -27,38 +27,30 @@ st.write(f"""
 st.dataframe(df_jamboree.head(2))
 
 st.write(f"""
-            # ********* Jamboree students admission data ******** 
+            # ** Students admission data ** 
                                 """)
 ## get data for Jamboree students data
 col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
+
 with col1:
     r1 = st.selectbox(
         'What is the University Rating of the student?',
             (1, 2, 3, 4, 5))
+
 with col2:
     r2 = st.selectbox(
         'Does the student have Research Experience?',
             (0, 1))
+
 with col3:
     l = st.selectbox(
         'What is the strength of LOR?',
             (1.0, 1.5, 2.0, 2.5, 3.5, 4.0, 4.5, 5.0))
+
 with col4:
     s = st.selectbox(
         'What is the strength of SOP?',
             (4.5, 4.0, 3.0, 3.5, 2.0, 5.0, 1.5, 1.0, 2.5))
-with col5:
-    g = st.selectbox(
-        'What is the GRE Score?',
-            (G1, G2, G3, G4, G5))
-with col6:
-    t = st.selectbox(
-        'What is the TOEFL Score?',
-            (T1, T2, T3)) 
-with col7:
-    c = st.selectbox(
-        'What is the University CGPA?',
-            (C1, C2, C3))
 
 st.write(f"""
     ###  CGPA, GRE Score, TOEFL Score, Chance of Admit - data for - Jamboree students: """)
