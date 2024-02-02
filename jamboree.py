@@ -46,7 +46,7 @@ with col2:
 with col3:
     l = st.selectbox(
         'What is the strength of LOR?',
-            (1.0, 1.5, 2.0, 2.5, ..., 3.5, 4.0, 4.5, 5.0))
+            (1.0, 1.5, 2.0, 2.5, 3.5, 4.0, 4.5, 5.0))
 with col4:
     s = st.selectbox(
         'What is the strength of SOP?',
@@ -54,20 +54,21 @@ with col4:
 with col5:
     g = st.selectbox(
         'What is the GRE Score?',
-            (290-300, 300-310, 310-320, 320-330, 330-340))
+            (G1, G2, G3, G4, G5))
 with col6:
     t = st.selectbox(
         'What is the TOEFL Score?',
-            (92-101,102-111,112-120)) 
+            (T1, T2, T3)) 
 with col7:
     c = st.selectbox(
         'What is the University CGPA?',
-            (6.8-7.7,7.8-8.8,8.9-9.92))
+            (C1, C2, C3))
 
 st.write(f"""
-    ###  CGPA "{c}" , GRE Score "{g}" , TOEFL Score "{t}", Chance of Admit "{c}" data for - Jamboree students: """)
+    ###  CGPA, GRE Score, TOEFL Score, Chance of Admit - data for - Jamboree students: """)
 
-df=df_jamboree.copy()
+df=df_jamboree[(df_jamboree['University Rating'] == r1) and (df_jamboree['Research'] == r2) and (df_jamboree['LOR'] == l) and (df_jamboree['SOP'] == s)]
+
 #print the filtered dataframe
 st.dataframe(df)
 
