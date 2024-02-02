@@ -19,7 +19,8 @@ warnings.filterwarnings('ignore')
 
 url = "https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/001/839/original/Jamboree_Admission.csv"
 df_jamboree = pd.read_csv(url)
-
+#Remove leading and trailing white spaces in column names
+df_jamboree.columns=df_jamboree.columns.str.strip()
 st.write(f"""
             # Jamboree students dataframe              
             """)
