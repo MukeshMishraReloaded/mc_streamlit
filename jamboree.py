@@ -22,9 +22,12 @@ warnings.filterwarnings('ignore')
 url = "https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/001/839/original/Jamboree_Admission.csv"
 df = pd.read_csv(url)
 
+
 #Remove leading and trailing white spaces in column names
 df.columns=df.columns.str.strip()
 
+st.write(f"""
+            ******* Jamboree Students admission data ******* """)
 #Check the first few rows
 df.head(5)
 
@@ -55,9 +58,14 @@ for row in range(2):
 plt.show()
 st.pyplot(fig)
 
-st.write(f""" 
+st.write(f"""
     INSIGHTS:
-    1. .
+        1. There is strong correlation between GRE, TOEFL and CGPA scores.
+        2. The histplots for numerical data columns tell us that the data is almost normally distributed for each of the numerical / continious variables, which is a good sign for Linear Regression analysis.
+        3. GRE Score: Ranges from 290 to 340, with a mean of approximately 316.47.
+        4. TOEFL Score: Ranges from 92 to 120, with a mean of approximately 107.19.
+        5. CGPA: Ranges from 6.8 to 9.92, with a mean of approximately 8.58.
+        6. Chance of Admit: Ranges from 0.34 to 0.97, with a mean of approximately 0.72.
         """)
 
 # Boxplot for 'Chance of Admit' against each categorical column
@@ -74,7 +82,7 @@ plt.show()
 st.pyplot(fig)
 
 st.write(f"""
-    INSIGHT:
-        1. There is strong correlation between GRE, TOEFL and CGPA scores.
-        2. The numerical columns are normally distributed.
+    INSIGHTS:
+        1. There are no outliers in the independent numerical columns data viz. CGPA, GRE Score & TOEFL Score.
+        2. There are 2 outliers in the 'Chance of Admit', but that is the target variable.
         """)
