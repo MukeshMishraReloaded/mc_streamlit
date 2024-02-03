@@ -27,7 +27,9 @@ df = pd.read_csv(url)
 df.columns=df.columns.str.strip()
 
 st.write(f"""
-            ******* Jamboree Students admission data ******* """)
+            -----------------------------------      Jamboree Students admission data       -------------------------- 
+            
+        """)
 #Check the first few rows
 df.head(5)
 
@@ -85,4 +87,6 @@ st.write(f"""
     INSIGHTS:
         1. There are no outliers in the independent numerical columns data viz. CGPA, GRE Score & TOEFL Score.
         2. There are 2 outliers in the 'Chance of Admit', but that is the target variable.
+        3. As we can see from the boxplots, the median 'Chance of Admit' goes up with the increase in the strength of the categorical values like SOP, LOR, University Rating & Research.
+        4. Exception: Median Chance of Admit for SOP 1.0 is greater than SOP 1.5.
         """)
