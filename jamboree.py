@@ -26,7 +26,8 @@ df = pd.read_csv(url)
 df.columns=df.columns.str.strip()
 
 #Check the first few rows
-df.head()
+df.head(5)
+
 #Converting Research, SOP, LOR and Uni. Rating as categorical values
 
 df['Research'] = df['Research'].astype('category')
@@ -52,6 +53,7 @@ for row in range(2):
     sns.histplot(data=df_filtered, x=num_cols[idx], ax=axis[row, col], kde=True)
     idx += 1
 plt.show()
+st.pyplot(fig)
 
 st.write(f""" 
     INSIGHTS:
