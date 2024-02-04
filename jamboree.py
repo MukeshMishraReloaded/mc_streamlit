@@ -72,7 +72,7 @@ def train_and_test(df, regression_type='Linear', compareFeatures=False):
     model.fit(X_train, y_train)
     #Compare scaled features
     if compareFeatures == True:
-        fig = plt.plot(figsize=(15, 5))
+        fig=plt.figure(figsize=(8, 6))
         imp = pd.DataFrame(list(zip(X_test.columns,np.abs(model.coef_))),
                    columns=['feature', 'coeff'])
         sns.barplot(x='feature', y='coeff', data=imp)
