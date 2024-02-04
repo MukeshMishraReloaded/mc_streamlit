@@ -30,8 +30,10 @@ st.write(f"""
             -----------------------------------      Jamboree Students admission data       -------------------------- 
             
         """)
+
 #Check the first few rows
-df.head(5)
+st.write(f"The first few rows of dataset are as follows: ")
+st.write(df.head(5))
 
 #Converting Research, SOP, LOR and Uni. Rating as categorical values
 
