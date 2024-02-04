@@ -186,15 +186,12 @@ for row in range(2):
     idx += 1
 plt.show()
 st.pyplot(fig)
-
+st.subheader(f"INSIGHTS:\n")
 st.write(f"""
-    INSIGHTS:\n
         1. There is strong correlation between GRE, TOEFL and CGPA scores.\n
-        2. With the histplots for numerical columns, we can say that the data is close to normal distribution.\n 
         3. GRE Score: Ranges from 290 to 340, with a mean of approximately 316.47.\n
         4. TOEFL Score: Ranges from 92 to 120, with a mean of approximately 107.19.\n
         5. CGPA: Ranges from 6.8 to 9.92, with a mean of approximately 8.58.\n
-        6. Chance of Admit: Ranges from 0.34 to 0.97, with a mean of approximately 0.72.\n
         """)
 
 st.write(f"""
@@ -214,8 +211,8 @@ plt.grid()
 plt.show()
 st.pyplot(fig)
 
+st.subheader(f"INSIGHTS:\n")
 st.write(f"""
-    INSIGHTS:\n
         1. There are no outliers in the independent numerical columns data viz. CGPA, GRE Score & TOEFL Score.\n
         2. There are 2 outliers in the 'Chance of Admit', but that is the target variable.\n
         3. As we can see from the boxplots, the median 'Chance of Admit' goes up with the increase in values for SOP, LOR, Research & University Rating.\n
