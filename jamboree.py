@@ -161,9 +161,9 @@ st.subheader(f"""
         - Correlation analysis using pairplots.\n
         """)
 # Create a pair plot
-fig=plt.figure(figsize=(5, 5))
-sns.pairplot(df_1)
+fig, axis = plt.subplots(nrows=4, ncols=4, figsize=(13, 5))sns.pairplot(df_1)
 # Display the plot
+sns.pairplot(df_1)
 plt.grid()
 plt.show()
 st.pyplot(fig)
