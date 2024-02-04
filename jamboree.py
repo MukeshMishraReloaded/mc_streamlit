@@ -49,6 +49,11 @@ num_cols = df.select_dtypes(include=['int64', 'float64']).columns
 df_filtered=df.copy()
 df_filtered.drop(['Serial No.'], axis=1, inplace=True)
 
+st.subheader(f"""
+        - Univariate Analysis.\n
+        - Univariate Analysis - Histplots for numerical variables. Example: GRE Score, CGPA.\n
+        """)
+
 # Univariate Analysis - Distribution of continuous variables
 num_cols = df_filtered.select_dtypes(include=['int64', 'float64']).columns
 print(num_cols)
@@ -72,6 +77,11 @@ st.write(f"""
         6. Chance of Admit: Ranges from 0.34 to 0.97, with a mean of approximately 0.72.\n
         """)
 
+st.subheader(f"""
+        - Univariate Analysis.\n
+        - Univariate Analysis - Boxplots for numerical variables. Example: GRE Score, CGPA.\n
+        """)
+
 # Boxplot for 'Chance of Admit' against each categorical column
 fig, axis = plt.subplots(nrows=2, ncols=2, figsize=(12, 8))
 fig.set_facecolor(color = 'grey')
@@ -93,7 +103,7 @@ st.write(f"""
         """)
 
 st.subheader(f"""
-        - Bivariate Analysis (Relationships between important variables).\n
+        - Bivariate Analysis.\n
         - Bivariate Analysis - Scatter Plots for pairs of variables. Example: GRE Score vs CGPA.\n
         """)
 
