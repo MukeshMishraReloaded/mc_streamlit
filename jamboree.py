@@ -151,9 +151,10 @@ if st.button('Submit'):
         st.subheader(f"The chance is bleak!")
 
 
-st.write("                                                                                           
-                                                                                                    
-                                                                                 ")
+
+st.markdown('<br><br>', unsafe_allow_html=True)  # Adds two line breaks worth of space
+
+st.subheader(f"Exploratory data analysis")
 #Check the first few rows
 st.subheader(f"The first couple of rows of the dataset are as follows for your reference: ")
 st.write(df.head(2))
