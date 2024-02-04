@@ -157,14 +157,5 @@ plt.grid()
 plt.show()
 st.pyplot(fig)
 
-st.subheader(f"""
-        - Correlation analysis using pairplots.\n
-        """)
-# Create a pair plot
-fig=plt.figure(figsize=(8, 6))
-# Display the plot
-sns.pairplot(df_1)
-plt.grid()
-plt.show()
-st.pyplot(fig)
+
 
