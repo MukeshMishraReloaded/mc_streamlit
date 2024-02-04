@@ -27,7 +27,6 @@ df = pd.read_csv(url)
 df.columns=df.columns.str.strip()
 
 st.title(f"""
-            ---------------------------------      
             Jamboree Students admission data       
             --------------------------------- 
         """)
