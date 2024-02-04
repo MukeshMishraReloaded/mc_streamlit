@@ -113,17 +113,14 @@ with col4:
         'University Rating',
             (1, 2, 3, 4, 5))
 
-st.write("Input your CGPA_")
 # Using number_input to get a float value
-c = st.number_input("Input a CGPA", min_value=0.0, max_value=10.0, value=0.0, step=0.1)
+c = st.number_input("Input CGPA", min_value=0.0, max_value=10.0, value=0.0, step=0.1)
 
-st.write("Input your GRE score_")
 # Using number_input to get a float value
-g = st.number_input("Input a GRE score", min_value=260.00, max_value=340.00, value=260.0, step=0.3)
+g = st.number_input("Input GRE score", min_value=260.00, max_value=340.00, value=260.0, step=0.3)
 
-st.write("Input your TOEFL score_")
 # Using number_input to get a float value
-t = st.number_input("Input a TOEFL score", min_value=0.0, max_value=120.0, value=0.0, step=0.3)
+t = st.number_input("Input TOEFL score", min_value=0.0, max_value=120.0, value=0.0, step=0.3)
 
 df_1=df.copy()
 df_1.drop(['Serial No.'], axis=1, inplace=True)
