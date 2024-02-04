@@ -93,9 +93,9 @@ st.write(f"""
         """)
 
 st.write(f"""
-        #Bivariate Analysis (Relationships between important variables).\n
-        # Bivariate Analysis - Scatter Plots for pairs of variables.\n
-        # Example: GRE Score vs CGPA.\n
+        - Bivariate Analysis (Relationships between important variables).\n
+        - Bivariate Analysis - Scatter Plots for pairs of variables.\n
+        - Example: GRE Score vs CGPA.\n
         """)
 
 ind_num_cols=['GRE Score', 'TOEFL Score', 'CGPA']
