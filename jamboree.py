@@ -225,8 +225,7 @@ st.write(f"""
         4. Exception: Median Chance of Admit for SOP 1.0 is greater than SOP 1.5.\n
         """)
 
-st.subheader(f"
-        - Bivariate Analysis.\n")
+st.subheader(f"Bivariate Analysis.\n")
 
 st.write(f"""
         - Bivariate Analysis - Scatter Plots for pairs of variables. Example: GRE Score vs CGPA.\n
