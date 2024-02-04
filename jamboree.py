@@ -79,12 +79,10 @@ def train_and_test(df, regression_type='Linear', compareFeatures=False):
         #plt.xticks(rotation=90)
         #plt.show()
         #st.pyplot(fig)
-  
     y_pred_test = model.predict(X_test)
     y_pred_train = model.predict(X_train)
     p_train = X_train.shape[1]
     p_test = X_test.shape[1]
-   
     n_test = len(y_test)
     n_train = len(y_train)
     #st.write(f'Performace metrics for the train dataset: ')
