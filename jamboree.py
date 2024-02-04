@@ -75,10 +75,10 @@ def train_and_test(df, regression_type='Linear', compareFeatures=False):
         fig = plt.plot(figsize=(15, 5))
         imp = pd.DataFrame(list(zip(X_test.columns,np.abs(model.coef_))),
                    columns=['feature', 'coeff'])
-      sns.barplot(x='feature', y='coeff', data=imp)
-      plt.xticks(rotation=90)
-      plt.show()
-     st.pyplot(fig)
+        sns.barplot(x='feature', y='coeff', data=imp)
+        plt.xticks(rotation=90)
+        plt.show()
+        st.pyplot(fig)
   
     y_pred_test = model.predict(X_test)
     y_pred_train = model.predict(X_train)
