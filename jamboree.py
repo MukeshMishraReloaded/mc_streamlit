@@ -52,29 +52,6 @@ df_filtered=df.copy()
 df_filtered.drop(['Serial No.'], axis=1, inplace=True)
 
 st.subheader(f"""
-        - Correlation analysis using Heatmap.\n
-        """)
-
-# Correlation Plot using Heatmap
-plt.figure(figsize=(8, 6))
-correlation_matrix = df_1.corr()
-sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
-plt.title('Correlation Heatmap')
-plt.grid()
-plt.show()
-st.pyplot(fig)
-
-st.subheader(f"""
-        - Correlation analysis using pairplots.\n
-        """)
-# Create a pair plot
-sns.pairplot(df_1)
-# Display the plot
-plt.grid()
-plt.show()
-st.pyplot(fig)
-
-st.subheader(f"""
         - Univariate Analysis.\n
         - Univariate Analysis - Histplots for numerical variables. Example: GRE Score, CGPA.\n
         """)
@@ -163,6 +140,30 @@ idx = 0
 for row in range(3):
   sns.regplot(data=df_filtered, x=ind_num_cols[idx], y='Chance of Admit', color='b', ax=axis[row])
   idx += 1
+plt.grid()
+plt.show()
+st.pyplot(fig)
+
+st.subheader(f"""
+        - Correlation analysis using Heatmap.\n
+        """)
+
+# Correlation Plot using Heatmap
+fig=plt.figure(figsize=(8, 6))
+correlation_matrix = df_1.corr()
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
+plt.title('Correlation Heatmap')
+plt.grid()
+plt.show()
+st.pyplot(fig)
+
+st.subheader(f"""
+        - Correlation analysis using pairplots.\n
+        """)
+# Create a pair plot
+fig=plt.figure(figsize=(5, 5))
+sns.pairplot(df_1)
+# Display the plot
 plt.grid()
 plt.show()
 st.pyplot(fig)
