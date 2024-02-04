@@ -30,7 +30,6 @@ st.title(f"""
             ---------------------------------      
             Jamboree Students admission data       
             --------------------------------- 
-            
         """)
 
 #Check the first few rows
