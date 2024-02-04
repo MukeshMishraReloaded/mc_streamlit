@@ -64,12 +64,12 @@ st.pyplot(fig)
 
 st.write(f"""
     INSIGHTS:
-        1. There is strong correlation between GRE, TOEFL and CGPA scores.
-        2. The histplots for numerical data columns tell us that the data is almost normally distributed for each of the numerical / continious variables, which is a good sign for Linear Regression analysis.
-        3. GRE Score: Ranges from 290 to 340, with a mean of approximately 316.47.
-        4. TOEFL Score: Ranges from 92 to 120, with a mean of approximately 107.19.
-        5. CGPA: Ranges from 6.8 to 9.92, with a mean of approximately 8.58.
-        6. Chance of Admit: Ranges from 0.34 to 0.97, with a mean of approximately 0.72.
+        1. There is strong correlation between GRE, TOEFL and CGPA scores.\n
+        2. The histplots for numerical data columns tell us that the data is almost normally distributed for each of the numerical / continious variables.\n 
+        3. GRE Score: Ranges from 290 to 340, with a mean of approximately 316.47.\n
+        4. TOEFL Score: Ranges from 92 to 120, with a mean of approximately 107.19.\n
+        5. CGPA: Ranges from 6.8 to 9.92, with a mean of approximately 8.58.\n
+        6. Chance of Admit: Ranges from 0.34 to 0.97, with a mean of approximately 0.72.\n
         """)
 
 # Boxplot for 'Chance of Admit' against each categorical column
