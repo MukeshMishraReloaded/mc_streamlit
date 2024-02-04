@@ -30,10 +30,6 @@ st.header(f"""
                             Jamboree student admissions       
                   """)
 
-#Check the first few rows
-st.write(f"The first few rows of dataset are as follows: ")
-st.write(df.head(5))
-
 col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
 with col1:
     s = st.selectbox(
@@ -54,15 +50,19 @@ with col4:
 
 st.title("Please enter your CGPA!")
 # Using number_input to get a float value
-gre_score = st.number_input("Input a CGPA", min_value=0, max_value=10, value=0.0, step=0.1)
+cgpa = st.number_input("Input a CGPA", min_value=0, max_value=10, value=0.0, step=0.1)
 
 st.title("Please enter your GRE score")
 # Using number_input to get a float value
-gre_score = st.number_input("Input a GRE score", min_value=260.0, max_value=340.0, value=0.0, step=0.01)
+gre_score = st.number_input("Input a GRE score", min_value=260.00, max_value=340.00, value=0.0, step=0.01)
 
 st.title("Please enter your TOEFL score")
 # Using number_input to get a float value
-gre_score = st.number_input("Input a TOEFL score", min_value=0, max_value=120.0, value=0.0, step=0.01)
+toefl_score = st.number_input("Input a TOEFL score", min_value=0, max_value=120.0, value=0.0, step=0.01)
+
+#Check the first few rows
+st.write(f"The first few rows of dataset are as follows: ")
+st.write(df.head(2))
 
 df_1=df.copy()
 df_1.drop(['Serial No.'], axis=1, inplace=True)
