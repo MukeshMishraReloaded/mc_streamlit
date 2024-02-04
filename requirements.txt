@@ -3,4 +3,4 @@ numpy
 pandas
 seaborn
 fsspec
-sklearn
+scikit-learn
