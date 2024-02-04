@@ -50,7 +50,7 @@ with col4:
 
 st.title("Please enter your CGPA!")
 # Using number_input to get a float value
-cgpa = st.number_input("Input a CGPA", min_value=0, max_value=10, value=0.0, step=0.1)
+cgpa = st.number_input("Input a CGPA", min_value=0.0, max_value=10.0, value=0.0, step=0.1)
 
 st.title("Please enter your GRE score")
 # Using number_input to get a float value
@@ -58,7 +58,7 @@ gre_score = st.number_input("Input a GRE score", min_value=260.00, max_value=340
 
 st.title("Please enter your TOEFL score")
 # Using number_input to get a float value
-toefl_score = st.number_input("Input a TOEFL score", min_value=0, max_value=120.0, value=0.0, step=0.01)
+toefl_score = st.number_input("Input a TOEFL score", min_value=0.0, max_value=120.0, value=0.0, step=0.01)
 
 #Check the first few rows
 st.write(f"The first few rows of dataset are as follows: ")
