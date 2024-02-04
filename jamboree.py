@@ -156,7 +156,7 @@ st.markdown('<br><br>', unsafe_allow_html=True)  # Adds two line breaks worth of
 
 st.subheader(f"Exploratory data analysis")
 #Check the first few rows
-st.subheader(f"The first couple of rows of the dataset are as follows for your reference: ")
+st.write(f"The first couple of rows of the dataset are as follows for your reference: ")
 st.write(df.head(2))
 
 #Converting Research, SOP, LOR and Uni. Rating as categorical values
