@@ -71,10 +71,10 @@ def train_and_test(df, regression_type='Linear', compareFeatures=False):
             
     model.fit(X_train, y_train)
     #Compare scaled features
-    #if compareFeatures == True:
+    if compareFeatures == True:
         #fig=plt.figure(figsize=(8, 6))
         #imp = pd.DataFrame(list(zip(X_test.columns,np.abs(model.coef_))),
-                   columns=['feature', 'coeff'])
+        #           columns=['feature', 'coeff'])
         #sns.barplot(x='feature', y='coeff', data=imp)
         #plt.xticks(rotation=90)
         #plt.show()
