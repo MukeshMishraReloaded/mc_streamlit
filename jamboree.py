@@ -145,11 +145,11 @@ if st.button('Submit'):
     model=train_and_test(df_1, regression_type='Linear', compareFeatures=True)
     predicted_chance = model.predict([[g, t, r2, s, l, c, r1]])
     st.write(f"The chance of admit is: {predicted_chance}")
-    if predicted_chance > 8.5:
+    if predicted_chance > 0.85:
         st.subheader(f"Chance of admission is quite strong!")
-    elif predicted_chance > 7.0:
+    elif predicted_chance > 0.7:
         st.subheader(f"Chance of admission is decent!")
-    elif predicted_chance > 5.0:
+    elif predicted_chance > 0.50:
         st.subheader(f"Chance of admission is weak!")
     else:
         st.subheader(f"The chance is bleak!")
