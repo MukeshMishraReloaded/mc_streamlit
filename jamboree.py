@@ -54,7 +54,7 @@ cgpa = st.number_input("Input a CGPA", min_value=0.0, max_value=10.0, value=0.0,
 
 st.title("Please enter your GRE score")
 # Using number_input to get a float value
-gre_score = st.number_input("Input a GRE score", min_value=260.00, max_value=340.00, value=0.0, step=0.01)
+gre_score = st.number_input("Input a GRE score", min_value=260.00, max_value=340.00, value=260.0, step=0.01)
 
 st.title("Please enter your TOEFL score")
 # Using number_input to get a float value
