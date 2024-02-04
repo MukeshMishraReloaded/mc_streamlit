@@ -23,6 +23,7 @@ from sklearn.linear_model import LinearRegression, Lasso, Ridge
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.preprocessing import PolynomialFeatures
 
+
 url = "https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/001/839/original/Jamboree_Admission.csv"
 df = pd.read_csv(url)
 
@@ -33,6 +34,63 @@ df.columns=df.columns.str.strip()
 st.header(f"""
                             Jamboree student admissions       
                   """)
+
+#Print all the performance metrics for linear regression models
+def get_metrics(y_true, y_pred, r, n, p, m, cols):
+    """Calculate and print MAE, RMSE, R2, and Adjusted R2."""
+    mae = mean_absolute_error(y_true, y_pred)
+    mse = mean_squared_error(y_true, y_pred)
+    rmse = np.sqrt(mse)
+    r2 = r2_score(y_true, y_pred)
+    adjusted_r2 = 1 - (1 - r2) * (n - 1) / (n - p - 1)
+    st.write(f'********* Regression Type: {r} *****')
+    st.write(f'MAE: {mae}')
+    st.write(f'RMSE: {rmse}')
+    st.write(f'R2: {r2}')
+    st.write(f'Adjusted R2: {adjusted_r2}')
+   
+    coef_df = pd.DataFrame({"Column": cols, "Coef": m.coef_})
+    st.write(f'Intercept: {m.intercept_}')
+    st.write("Coefficients: ") 
+    st.write(coef_df)
+    st.write("-"*50)
+    
+def train_and_test(df, regression_type='Linear', compareFeatures=False):
+    """Train and test the specified regression model."""
+
+    X = df.drop(['Chance of Admit'], axis=1)  # Assuming this as target
+    y = df['Chance of Admit']
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    if regression_type == 'Lasso':
+      model = Lasso(alpha=0.001)
+    elif regression_type == 'Ridge':
+      model = Ridge(alpha=1.0)
+    else:
+      model = LinearRegression()
+            
+    model.fit(X_train, y_train)
+    #Compare scaled features
+    if compareFeatures == True:
+      imp = pd.DataFrame(list(zip(X_test.columns,np.abs(model.coef_))),
+                   columns=['feature', 'coeff'])
+      sns.barplot(x='feature', y='coeff', data=imp)
+      plt.xticks(rotation=90)
+  
+    y_pred_test = model.predict(X_test)
+    y_pred_train = model.predict(X_train)
+    p_train = X_train.shape[1]
+    p_test = X_test.shape[1]
+   
+    n_test = len(y_test)
+    n_train = len(y_train)
+    st.write(f'Performace metrics for the train dataset: ')
+    st.write(f'-------------------------------------------')
+    get_metrics(y_train, y_pred_train, regression_type, n_train, p_train, model, np.array(list(X.columns)))
+    st.write(f'Performace metrics for the test dataset: ')
+    st.write(f'-------------------------------------------')
+    get_metrics(y_test, y_pred_test, regression_type, n_test, p_test, model, np.array(list(X.columns)))
+    return model
 
 col1, col2 = st.columns(2)
 with col1:
@@ -206,60 +264,3 @@ plt.title('Correlation Heatmap')
 plt.grid()
 plt.show()
 st.pyplot(fig)
-
-#Print all the performance metrics for linear regression models
-def get_metrics(y_true, y_pred, r, n, p, m, cols):
-    """Calculate and print MAE, RMSE, R2, and Adjusted R2."""
-    mae = mean_absolute_error(y_true, y_pred)
-    mse = mean_squared_error(y_true, y_pred)
-    rmse = np.sqrt(mse)
-    r2 = r2_score(y_true, y_pred)
-    adjusted_r2 = 1 - (1 - r2) * (n - 1) / (n - p - 1)
-    st.write(f'********* Regression Type: {r} *****')
-    st.write(f'MAE: {mae}')
-    st.write(f'RMSE: {rmse}')
-    st.write(f'R2: {r2}')
-    st.write(f'Adjusted R2: {adjusted_r2}')
-   
-    coef_df = pd.DataFrame({"Column": cols, "Coef": m.coef_})
-    st.write(f'Intercept: {m.intercept_}')
-    st.write("Coefficients: ") 
-    st.write(coef_df)
-    st.write("-"*50)
-    
-def train_and_test(df, regression_type='Linear', compareFeatures=False):
-    """Train and test the specified regression model."""
-
-    X = df.drop(['Chance of Admit'], axis=1)  # Assuming this as target
-    y = df['Chance of Admit']
-
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    if regression_type == 'Lasso':
-      model = Lasso(alpha=0.001)
-    elif regression_type == 'Ridge':
-      model = Ridge(alpha=1.0)
-    else:
-      model = LinearRegression()
-            
-    model.fit(X_train, y_train)
-    #Compare scaled features
-    if compareFeatures == True:
-      imp = pd.DataFrame(list(zip(X_test.columns,np.abs(model.coef_))),
-                   columns=['feature', 'coeff'])
-      sns.barplot(x='feature', y='coeff', data=imp)
-      plt.xticks(rotation=90)
-  
-    y_pred_test = model.predict(X_test)
-    y_pred_train = model.predict(X_train)
-    p_train = X_train.shape[1]
-    p_test = X_test.shape[1]
-   
-    n_test = len(y_test)
-    n_train = len(y_train)
-    st.write(f'Performace metrics for the train dataset: ')
-    st.write(f'-------------------------------------------')
-    get_metrics(y_train, y_pred_train, regression_type, n_train, p_train, model, np.array(list(X.columns)))
-    st.write(f'Performace metrics for the test dataset: ')
-    st.write(f'-------------------------------------------')
-    get_metrics(y_test, y_pred_test, regression_type, n_test, p_test, model, np.array(list(X.columns)))
-    return model
