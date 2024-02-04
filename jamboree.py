@@ -97,11 +97,11 @@ col1, col2 = st.columns(2)
 with col1:
     s = st.selectbox(
         'Please select a value for Statement of Purpose (SOP)',
-            (4.5, 4.0, 3.0, 3.5, 2.0, 5.0, 1.5, 1.0, 2.5))
+                (1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0))
 with col2:
     l = st.selectbox(
         'Please select a value for strength of Letter of Recommendation (LOR)',
-            (4.5, 3.5, 2.5, 3.0, 4.0, 1.5, 2.0, 5.0, 1.0))
+            (1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0))
 
 col3, col4 = st.columns(2)
 with col3:
