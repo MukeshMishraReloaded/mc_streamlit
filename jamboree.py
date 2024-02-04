@@ -128,8 +128,8 @@ st.write("Please enter your TOEFL score")
 t = st.number_input("Input a TOEFL score", min_value=0.0, max_value=120.0, value=0.0, step=0.3)
 
 #Check the first few rows
-st.subheader(f"The first couple of rows of the dataset are as follows for your reference: ")
-st.write(df.head(2))
+#st.subheader(f"The first couple of rows of the dataset are as follows for your reference: ")
+#st.write(df.head(2))
 
 df_1=df.copy()
 df_1.drop(['Serial No.'], axis=1, inplace=True)
@@ -146,7 +146,7 @@ if st.button('Submit'):
     # Linear Regression performance metrics
     model=train_and_test(df_1, regression_type='Linear', compareFeatures=True)
     predicted_chance = model.predict([[g, t, r2, s, l, c, r1]])
-    st.write(f"Predicted chance of admission: {predicted_chance}")
+    st.header(f"Predicted chance of admission: {predicted_chance}")
 
 
 #Converting Research, SOP, LOR and Uni. Rating as categorical values
