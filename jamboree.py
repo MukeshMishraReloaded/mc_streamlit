@@ -64,8 +64,7 @@ t = st.number_input("Input a TOEFL score", min_value=0.0, max_value=120.0, value
 
 
 #Check the first few rows
-st.subheader(f"
-                The first few rows of dataset are as follows: ")
+st.subheader(f"The first few rows of dataset are as follows: ")
 st.write(df.head(2))
 
 df_1=df.copy()
