@@ -142,4 +142,23 @@ plt.grid()
 plt.show()
 st.pyplot(fig)
 
+st.subheader(f"""
+        - Correlation analysis using Heatmap.\n
+        - Correlation analysis using pairplots.\n
+        """)
 
+# Correlation Plot using Heatmap
+plt.figure(figsize=(8, 6))
+correlation_matrix = df_1.corr()
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
+plt.title('Correlation Heatmap')
+plt.grid()
+plt.show()
+st.pyplot(fig)
+
+# Create a pair plot
+sns.pairplot(df_filtered)
+# Display the plot
+plt.grid()
+plt.show()
+st.pyplot(fig)
