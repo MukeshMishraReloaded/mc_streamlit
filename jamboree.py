@@ -118,5 +118,29 @@ plt.grid()
 plt.show()
 st.pyplot(fig)
 
+#Bivariate Analysis (Relationships between important variables).
+# Bivariate Analysis - Regression Plots for pairs of variables
+# Example: GRE Score vs Chance of Admit
+
+st.subheader(f"""
+        - Bivariate Analysis.\n
+        - Bivariate Analysis - Regplots for pairs of variables. Example: GRE Score vs Chance of Admit.\n
+        """)
+
+#Bivariate Analysis (Relationships between important variables).
+# Bivariate Analysis - Regression Plots for pairs of variables
+# Example: GRE Score vs Chance of Admit
+
+ind_num_cols=['GRE Score', 'TOEFL Score', 'CGPA']
+# Regplot for each numerical column
+fig, axis = plt.subplots(nrows=1, ncols=3, figsize=(13, 5))
+fig.set_facecolor(color = 'grey')
+idx = 0
+for row in range(3):
+  sns.regplot(data=df_filtered, x=ind_num_cols[idx], y='Chance of Admit', color='b', ax=axis[row])
+  idx += 1
+plt.grid()
+plt.show()
+st.pyplot(fig)
 
 
