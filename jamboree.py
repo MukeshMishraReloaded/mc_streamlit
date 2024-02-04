@@ -96,32 +96,32 @@ def train_and_test(df, regression_type='Linear', compareFeatures=False):
 col1, col2 = st.columns(2)
 with col1:
     s = st.selectbox(
-        'Please select a value for Statement of Purpose (SOP)',
+        'Statement of Purpose (SOP)',
                 (1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0))
 with col2:
     l = st.selectbox(
-        'Please select a value for strength of Letter of Recommendation (LOR)',
+        'Letter of Recommendation (LOR)',
             (1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0))
 
 col3, col4 = st.columns(2)
 with col3:
     r1 = st.selectbox(
-        'Please select 1 if the student has research experience',
+        'Research experience (No/Yes?)',
             (0, 1))
 with col4:
     r2 = st.selectbox(
-        'Please select the University Rating',
+        'University Rating',
             (1, 2, 3, 4, 5))
 
-st.write("Please enter your CGPA!")
+st.write("Input your CGPA_")
 # Using number_input to get a float value
 c = st.number_input("Input a CGPA", min_value=0.0, max_value=10.0, value=0.0, step=0.1)
 
-st.write("Please enter your GRE score")
+st.write("Input your GRE score_")
 # Using number_input to get a float value
 g = st.number_input("Input a GRE score", min_value=260.00, max_value=340.00, value=260.0, step=0.3)
 
-st.write("Please enter your TOEFL score")
+st.write("Input your TOEFL score_")
 # Using number_input to get a float value
 t = st.number_input("Input a TOEFL score", min_value=0.0, max_value=120.0, value=0.0, step=0.3)
 
