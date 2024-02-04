@@ -27,7 +27,7 @@ df = pd.read_csv(url)
 df.columns=df.columns.str.strip()
 
 st.header(f"""
-            Jamboree student admissions       
+                            Jamboree student admissions       
                   """)
 
 #Check the first few rows
