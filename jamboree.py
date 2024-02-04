@@ -149,7 +149,7 @@ st.subheader(f"""
 
 # Correlation Plot using Heatmap
 plt.figure(figsize=(8, 6))
-correlation_matrix = df_1.corr()
+correlation_matrix = df.corr()
 sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
 plt.title('Correlation Heatmap')
 plt.grid()
