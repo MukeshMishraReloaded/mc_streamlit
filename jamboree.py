@@ -173,8 +173,7 @@ num_cols = df.select_dtypes(include=['int64', 'float64']).columns
 df_filtered=df.copy()
 df_filtered.drop(['Serial No.'], axis=1, inplace=True)
 
-st.subheader(f"
-        - Univariate Analysis.\n")
+st.subheader(f"Univariate Analysis.\n")
 
 st.write(f"Univariate Analysis - Histplots for numerical variables. Example: GRE Score, CGPA.\n")
 
