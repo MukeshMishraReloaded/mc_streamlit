@@ -26,10 +26,10 @@ df = pd.read_csv(url)
 #Remove leading and trailing white spaces in column names
 df.columns=df.columns.str.strip()
 
-st.title(f"""
-            Jamboree Student admissions       
-            ----------------------------
-        """)
+st.header(f"""
+            --------------------------
+            Jamboree student admissions       
+                  """)
 
 #Check the first few rows
 st.write(f"The first few rows of dataset are as follows: ")
