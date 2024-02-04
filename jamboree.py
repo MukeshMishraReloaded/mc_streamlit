@@ -34,6 +34,36 @@ st.header(f"""
 st.write(f"The first few rows of dataset are as follows: ")
 st.write(df.head(5))
 
+col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
+with col1:
+    s = st.selectbox(
+        'Please select a value for Statement of Purpose (SOP)',
+            (4.5, 4.0, 3.0, 3.5, 2.0, 5.0, 1.5, 1.0, 2.5))
+with col2:
+    l = st.selectbox(
+        'Please select a value for strength of Letter of Recommendation (LOR)',
+            (4.5, 3.5, 2.5, 3.0, 4.0, 1.5, 2.0, 5.0, 1.0))
+with col3:
+    r1 = st.selectbox(
+        'Please select 1 if the student has research experience',
+            (0, 1))
+with col4:
+    r2 = st.selectbox(
+        'Please select the University Rating',
+            (1, 2, 3, 4, 5))
+
+st.title("Please enter your CGPA!")
+# Using number_input to get a float value
+gre_score = st.number_input("Input a CGPA", min_value=0, max_value=10, value=0.0, step=0.1)
+
+st.title("Please enter your GRE score")
+# Using number_input to get a float value
+gre_score = st.number_input("Input a GRE score", min_value=260.0, max_value=340.0, value=0.0, step=0.01)
+
+st.title("Please enter your TOEFL score")
+# Using number_input to get a float value
+gre_score = st.number_input("Input a TOEFL score", min_value=0, max_value=120.0, value=0.0, step=0.01)
+
 df_1=df.copy()
 df_1.drop(['Serial No.'], axis=1, inplace=True)
 
