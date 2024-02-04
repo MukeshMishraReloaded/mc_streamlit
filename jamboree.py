@@ -80,7 +80,6 @@ for row in range(2):
   for col in range(2):
       sns.boxplot(data=df, x=cat_cols[idx], y='Chance of Admit', ax=axis[row, col])
       idx += 1
-plt.show()
 plt.grid()
 plt.show()
 st.pyplot(fig)
@@ -92,3 +91,23 @@ st.write(f"""
         3. As we can see from the boxplots, the median 'Chance of Admit' goes up with the increase in values for SOP, LOR, Research & University Rating.\n
         4. Exception: Median Chance of Admit for SOP 1.0 is greater than SOP 1.5.\n
         """)
+
+st.write(f"""
+        #Bivariate Analysis (Relationships between important variables).\n
+        # Bivariate Analysis - Scatter Plots for pairs of variables.\n
+        # Example: GRE Score vs CGPA.\n
+        """)
+
+ind_num_cols=['GRE Score', 'TOEFL Score', 'CGPA']
+# Scatter plot for each numerical column
+fig, axis = plt.subplots(nrows=1, ncols=3, figsize=(13, 5))
+fig.set_facecolor(color = 'grey')
+sns.scatterplot(data=df_filtered, x=ind_num_cols[0], y=ind_num_cols[1], ax=axis[0])
+sns.scatterplot(data=df_filtered, x=ind_num_cols[0], y=ind_num_cols[2], ax=axis[1])
+sns.scatterplot(data=df_filtered, x=ind_num_cols[1], y=ind_num_cols[2], ax=axis[2])
+plt.grid()
+plt.show()
+st.pyplot(fig)
+
+
+
