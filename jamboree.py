@@ -27,8 +27,8 @@ df = pd.read_csv(url)
 df.columns=df.columns.str.strip()
 
 st.title(f"""
-            Jamboree Students admission data       
-            --------------------------------- 
+            Jamboree Student admissions       
+            ----------------------------
         """)
 
 #Check the first few rows
@@ -63,9 +63,9 @@ plt.show()
 st.pyplot(fig)
 
 st.write(f"""
-    INSIGHTS:
+    INSIGHTS:\n
         1. There is strong correlation between GRE, TOEFL and CGPA scores.\n
-        2. The histplots for numerical data columns tell us that the data is almost normally distributed for each of the numerical / continious variables.\n 
+        2. With the histplots for numerical columns, we can say that the data is close to normal distribution.\n 
         3. GRE Score: Ranges from 290 to 340, with a mean of approximately 316.47.\n
         4. TOEFL Score: Ranges from 92 to 120, with a mean of approximately 107.19.\n
         5. CGPA: Ranges from 6.8 to 9.92, with a mean of approximately 8.58.\n
@@ -86,9 +86,9 @@ plt.show()
 st.pyplot(fig)
 
 st.write(f"""
-    INSIGHTS:
-        1. There are no outliers in the independent numerical columns data viz. CGPA, GRE Score & TOEFL Score.
-        2. There are 2 outliers in the 'Chance of Admit', but that is the target variable.
-        3. As we can see from the boxplots, the median 'Chance of Admit' goes up with the increase in the strength of the categorical values like SOP, LOR, University Rating & Research.
-        4. Exception: Median Chance of Admit for SOP 1.0 is greater than SOP 1.5.
+    INSIGHTS:\n
+        1. There are no outliers in the independent numerical columns data viz. CGPA, GRE Score & TOEFL Score.\n
+        2. There are 2 outliers in the 'Chance of Admit', but that is the target variable.\n
+        3. As we can see from the boxplots, the median 'Chance of Admit' goes up with the increase in values for SOP, LOR, Research & University Rating.\n
+        4. Exception: Median Chance of Admit for SOP 1.0 is greater than SOP 1.5.\n
         """)
