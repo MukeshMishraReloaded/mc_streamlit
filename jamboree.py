@@ -43,17 +43,17 @@ def get_metrics(y_true, y_pred, r, n, p, m, cols):
     rmse = np.sqrt(mse)
     r2 = r2_score(y_true, y_pred)
     adjusted_r2 = 1 - (1 - r2) * (n - 1) / (n - p - 1)
-    st.write(f'********* Regression Type: {r} *****')
-    st.write(f'MAE: {mae}')
-    st.write(f'RMSE: {rmse}')
-    st.write(f'R2: {r2}')
-    st.write(f'Adjusted R2: {adjusted_r2}')
+    #st.write(f'********* Regression Type: {r} *****')
+    #st.write(f'MAE: {mae}')
+    #st.write(f'RMSE: {rmse}')
+    #st.write(f'R2: {r2}')
+    #st.write(f'Adjusted R2: {adjusted_r2}')
    
     coef_df = pd.DataFrame({"Column": cols, "Coef": m.coef_})
-    st.write(f'Intercept: {m.intercept_}')
-    st.write("Coefficients: ") 
-    st.write(coef_df)
-    st.write("-"*50)
+    #st.write(f'Intercept: {m.intercept_}')
+    #st.write("Coefficients: ") 
+    #st.write(coef_df)
+    #st.write("-"*50)
     
 def train_and_test(df, regression_type='Linear', compareFeatures=False):
     """Train and test the specified regression model."""
@@ -72,10 +72,13 @@ def train_and_test(df, regression_type='Linear', compareFeatures=False):
     model.fit(X_train, y_train)
     #Compare scaled features
     if compareFeatures == True:
-      imp = pd.DataFrame(list(zip(X_test.columns,np.abs(model.coef_))),
+        fig = plt.plot(figsize=(15, 5))
+        imp = pd.DataFrame(list(zip(X_test.columns,np.abs(model.coef_))),
                    columns=['feature', 'coeff'])
       sns.barplot(x='feature', y='coeff', data=imp)
       plt.xticks(rotation=90)
+      plt.show()
+     st.pyplot(fig)
   
     y_pred_test = model.predict(X_test)
     y_pred_train = model.predict(X_train)
@@ -84,11 +87,11 @@ def train_and_test(df, regression_type='Linear', compareFeatures=False):
    
     n_test = len(y_test)
     n_train = len(y_train)
-    st.write(f'Performace metrics for the train dataset: ')
-    st.write(f'-------------------------------------------')
+    #st.write(f'Performace metrics for the train dataset: ')
+    #st.write(f'-------------------------------------------')
     get_metrics(y_train, y_pred_train, regression_type, n_train, p_train, model, np.array(list(X.columns)))
-    st.write(f'Performace metrics for the test dataset: ')
-    st.write(f'-------------------------------------------')
+    #st.write(f'Performace metrics for the test dataset: ')
+    #st.write(f'-------------------------------------------')
     get_metrics(y_test, y_pred_test, regression_type, n_test, p_test, model, np.array(list(X.columns)))
     return model
 
