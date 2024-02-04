@@ -70,8 +70,9 @@ def train_and_test(df, regression_type='Linear', compareFeatures=False):
       model = LinearRegression()
             
     model.fit(X_train, y_train)
+    return model
     #Compare scaled features
-    if compareFeatures == True:
+    #if compareFeatures == True:
         #fig=plt.figure(figsize=(8, 6))
         #imp = pd.DataFrame(list(zip(X_test.columns,np.abs(model.coef_))),
         #           columns=['feature', 'coeff'])
@@ -79,19 +80,18 @@ def train_and_test(df, regression_type='Linear', compareFeatures=False):
         #plt.xticks(rotation=90)
         #plt.show()
         #st.pyplot(fig)
-    y_pred_test = model.predict(X_test)
-    y_pred_train = model.predict(X_train)
-    p_train = X_train.shape[1]
-    p_test = X_test.shape[1]
-    n_test = len(y_test)
-    n_train = len(y_train)
+    #y_pred_test = model.predict(X_test)
+    #y_pred_train = model.predict(X_train)
+    #p_train = X_train.shape[1]
+    #p_test = X_test.shape[1]
+    #n_test = len(y_test)
+    #n_train = len(y_train)
     #st.write(f'Performace metrics for the train dataset: ')
     #st.write(f'-------------------------------------------')
-    get_metrics(y_train, y_pred_train, regression_type, n_train, p_train, model, np.array(list(X.columns)))
+    #get_metrics(y_train, y_pred_train, regression_type, n_train, p_train, model, np.array(list(X.columns)))
     #st.write(f'Performace metrics for the test dataset: ')
     #st.write(f'-------------------------------------------')
-    get_metrics(y_test, y_pred_test, regression_type, n_test, p_test, model, np.array(list(X.columns)))
-    return model
+    #get_metrics(y_test, y_pred_test, regression_type, n_test, p_test, model, np.array(list(X.columns)))
 
 col1, col2 = st.columns(2)
 with col1:
