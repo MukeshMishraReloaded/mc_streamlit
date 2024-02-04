@@ -50,15 +50,15 @@ with col4:
         'Please select the University Rating',
             (1, 2, 3, 4, 5))
 
-st.title("Please enter your CGPA!")
+st.write("Please enter your CGPA!")
 # Using number_input to get a float value
 cgpa = st.number_input("Input a CGPA", min_value=0.0, max_value=10.0, value=0.0, step=0.1)
 
-st.title("Please enter your GRE score")
+st.write("Please enter your GRE score")
 # Using number_input to get a float value
 gre_score = st.number_input("Input a GRE score", min_value=260.00, max_value=340.00, value=260.0, step=0.01)
 
-st.title("Please enter your TOEFL score")
+st.write("Please enter your TOEFL score")
 # Using number_input to get a float value
 toefl_score = st.number_input("Input a TOEFL score", min_value=0.0, max_value=120.0, value=0.0, step=0.01)
 
