@@ -26,7 +26,7 @@ df = pd.read_csv(url)
 #Remove leading and trailing white spaces in column names
 df.columns=df.columns.str.strip()
 
-st.write(f"""
+st.title(f"""
             -----------------------------------      Jamboree Students admission data       -------------------------- 
             
         """)
