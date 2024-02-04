@@ -173,10 +173,10 @@ num_cols = df.select_dtypes(include=['int64', 'float64']).columns
 df_filtered=df.copy()
 df_filtered.drop(['Serial No.'], axis=1, inplace=True)
 
-st.subheader(f"""
-        - Univariate Analysis.\n
-        - Univariate Analysis - Histplots for numerical variables. Example: GRE Score, CGPA.\n
-        """)
+st.subheader(f"
+        - Univariate Analysis.\n")
+
+st.write(f"Univariate Analysis - Histplots for numerical variables. Example: GRE Score, CGPA.\n")
 
 # Univariate Analysis - Distribution of continuous variables
 num_cols = df_filtered.select_dtypes(include=['int64', 'float64']).columns
@@ -226,8 +226,10 @@ st.write(f"""
         4. Exception: Median Chance of Admit for SOP 1.0 is greater than SOP 1.5.\n
         """)
 
+st.subheader(f"
+        - Bivariate Analysis.\n")
+
 st.write(f"""
-        - Bivariate Analysis.\n
         - Bivariate Analysis - Scatter Plots for pairs of variables. Example: GRE Score vs CGPA.\n
         """)
 
@@ -242,12 +244,10 @@ plt.grid()
 plt.show()
 st.pyplot(fig)
 
-#Bivariate Analysis (Relationships between important variables).
 # Bivariate Analysis - Regression Plots for pairs of variables
 # Example: GRE Score vs Chance of Admit
 
 st.write(f"""
-        - Bivariate Analysis.\n
         - Bivariate Analysis - Regplots for pairs of variables. Example: GRE Score vs Chance of Admit.\n
         """)
 
