@@ -142,7 +142,7 @@ if st.button('Submit'):
     # and display the predicted outcome
     # Linear Regression performance metrics
     model=train_and_test(df_1, regression_type='Linear', compareFeatures=True)
-    predicted_chance = model.predict([[g, t, c, s, l, r1, r2]])
+    predicted_chance = model.predict([[g, t, r2, s, l, c, r1]])
     st.write(f"Predicted chance of admission: {predicted_chance}")
 
 
