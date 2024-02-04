@@ -201,7 +201,7 @@ st.write(f"""
         6. Chance of Admit: Ranges from 0.34 to 0.97, with a mean of approximately 0.72.\n
         """)
 
-st.subheader(f"""
+st.write(f"""
         - Univariate Analysis.\n
         - Univariate Analysis - Boxplots for numerical variables. Example: GRE Score, CGPA.\n
         """)
@@ -226,7 +226,7 @@ st.write(f"""
         4. Exception: Median Chance of Admit for SOP 1.0 is greater than SOP 1.5.\n
         """)
 
-st.subheader(f"""
+st.write(f"""
         - Bivariate Analysis.\n
         - Bivariate Analysis - Scatter Plots for pairs of variables. Example: GRE Score vs CGPA.\n
         """)
@@ -246,7 +246,7 @@ st.pyplot(fig)
 # Bivariate Analysis - Regression Plots for pairs of variables
 # Example: GRE Score vs Chance of Admit
 
-st.subheader(f"""
+st.write(f"""
         - Bivariate Analysis.\n
         - Bivariate Analysis - Regplots for pairs of variables. Example: GRE Score vs Chance of Admit.\n
         """)
@@ -266,7 +266,7 @@ plt.grid()
 plt.show()
 st.pyplot(fig)
 
-st.subheader(f"""
+st.write(f"""
         - Correlation analysis using Heatmap.\n
         """)
 
