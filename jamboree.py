@@ -170,7 +170,7 @@ num_cols = df.select_dtypes(include=['int64', 'float64']).columns
 df_filtered=df.copy()
 df_filtered.drop(['Serial No.'], axis=1, inplace=True)
 
-st.subheader(f"Univariate Analysis.\n")
+st.subheader(f"\t\t Univariate Analysis:\n")
 
 st.write(f"Univariate Analysis - Histplots for numerical variables. Example: GRE Score, CGPA.\n")
 
@@ -219,7 +219,7 @@ st.write(f"""
         4. Exception: Median Chance of Admit for SOP 1.0 is greater than SOP 1.5.\n
         """)
 
-st.subheader(f"Bivariate Analysis.\n")
+st.subheader(f"\t\tBivariate Analysis:\n")
 
 st.write(f"""
         - Bivariate Analysis - Scatter Plots for pairs of variables. Example: GRE Score vs CGPA.\n
@@ -258,9 +258,7 @@ plt.grid()
 plt.show()
 st.pyplot(fig)
 
-st.write(f"""
-        - Correlation analysis using Heatmap.\n
-        """)
+st.subheader(f"\t\tCorrelation analysis using Heatmap.\n")
 
 # Correlation Plot using Heatmap
 fig=plt.figure(figsize=(8, 6))
