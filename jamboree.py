@@ -34,6 +34,9 @@ st.header(f"""
 st.write(f"The first few rows of dataset are as follows: ")
 st.write(df.head(5))
 
+df_1=df.copy()
+df_1.drop(['Serial No.'], axis=1, inplace=True)
+
 #Converting Research, SOP, LOR and Uni. Rating as categorical values
 
 df['Research'] = df['Research'].astype('category')
@@ -147,7 +150,7 @@ st.subheader(f"""
 
 # Correlation Plot using Heatmap
 plt.figure(figsize=(8, 6))
-correlation_matrix = df_filtered.corr()
+correlation_matrix = df_1.corr()
 sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
 plt.title('Correlation Heatmap')
 plt.grid()
@@ -158,7 +161,7 @@ st.subheader(f"""
         - Correlation analysis using pairplots.\n
         """)
 # Create a pair plot
-sns.pairplot(df_filtered)
+sns.pairplot(df_1)
 # Display the plot
 plt.grid()
 plt.show()
