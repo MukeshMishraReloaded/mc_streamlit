@@ -124,6 +124,13 @@ st.write("Please enter your TOEFL score")
 # Using number_input to get a float value
 t = st.number_input("Input a TOEFL score", min_value=0.0, max_value=120.0, value=0.0, step=0.3)
 
+#Check the first few rows
+st.subheader(f"The first couple of rows of the dataset are as follows for your reference: ")
+st.write(df.head(2))
+
+df_1=df.copy()
+df_1.drop(['Serial No.'], axis=1, inplace=True)
+
 # Submit button
 if st.button('Submit'):
     # Placeholder for processing input values
@@ -138,12 +145,6 @@ if st.button('Submit'):
     predicted_chance = model.predict([[g, t, c, s, l, r1, r2]])
     st.write(f"Predicted chance of admission: {predicted_chance}")
 
-#Check the first few rows
-st.subheader(f"The first few rows of dataset are as follows: ")
-st.write(df.head(2))
-
-df_1=df.copy()
-df_1.drop(['Serial No.'], axis=1, inplace=True)
 
 #Converting Research, SOP, LOR and Uni. Rating as categorical values
 
