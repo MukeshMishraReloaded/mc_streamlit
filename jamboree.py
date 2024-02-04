@@ -18,6 +18,10 @@ import seaborn as sns
 #from sklearn.preprocessing import MinMaxScaler
 import warnings
 warnings.filterwarnings('ignore')
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression, Lasso, Ridge
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from sklearn.preprocessing import PolynomialFeatures
 
 url = "https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/001/839/original/Jamboree_Admission.csv"
 df = pd.read_csv(url)
@@ -56,12 +60,25 @@ c = st.number_input("Input a CGPA", min_value=0.0, max_value=10.0, value=0.0, st
 
 st.write("Please enter your GRE score")
 # Using number_input to get a float value
-g = st.number_input("Input a GRE score", min_value=260.00, max_value=340.00, value=260.0, step=0.01)
+g = st.number_input("Input a GRE score", min_value=260.00, max_value=340.00, value=260.0, step=0.3)
 
 st.write("Please enter your TOEFL score")
 # Using number_input to get a float value
-t = st.number_input("Input a TOEFL score", min_value=0.0, max_value=120.0, value=0.0, step=0.01)
+t = st.number_input("Input a TOEFL score", min_value=0.0, max_value=120.0, value=0.0, step=0.3)
 
+# Submit button
+if st.button('Submit'):
+    # Placeholder for processing input values
+    # For example, you might calculate a score or predict admission chances here
+    st.write("Values submitted successfully!")
+    st.write(f"SOP: {s}, LOR: {l}, Research: {r1}, University Rating: {r2}, CGPA: {c}, GRE: {g}, TOEFL: {t}")
+    
+    # We now call model.predict() function here
+    # and display the predicted outcome
+    # Linear Regression performance metrics
+    model=train_and_test(df_1, regression_type='Linear', compareFeatures=True)
+    predicted_chance = model.predict([[g, t, c, s, l, r1, r2]])
+    st.write(f"Predicted chance of admission: {predicted_chance}")
 
 #Check the first few rows
 st.subheader(f"The first few rows of dataset are as follows: ")
@@ -190,15 +207,7 @@ plt.grid()
 plt.show()
 st.pyplot(fig)
 
-#Generic train and test regression function
-import pandas as pd
-import numpy as np
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression, Lasso, Ridge
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-from sklearn.preprocessing import PolynomialFeatures
 #Print all the performance metrics for linear regression models
-
 def get_metrics(y_true, y_pred, r, n, p, m, cols):
     """Calculate and print MAE, RMSE, R2, and Adjusted R2."""
     mae = mean_absolute_error(y_true, y_pred)
@@ -217,6 +226,7 @@ def get_metrics(y_true, y_pred, r, n, p, m, cols):
     st.write("Coefficients: ") 
     st.write(coef_df)
     st.write("-"*50)
+    
 def train_and_test(df, regression_type='Linear', compareFeatures=False):
     """Train and test the specified regression model."""
 
@@ -252,10 +262,4 @@ def train_and_test(df, regression_type='Linear', compareFeatures=False):
     st.write(f'Performace metrics for the test dataset: ')
     st.write(f'-------------------------------------------')
     get_metrics(y_test, y_pred_test, regression_type, n_test, p_test, model, np.array(list(X.columns)))
-
-# Linear Regression performance metrics
-train_and_test(df_1, regression_type='Linear', compareFeatures=True)
-# Lasso Regression performance metrics
-train_and_test(df_1, regression_type='Lasso')
-# Ridge Regression performance metrics
-train_and_test(df_1, regression_type='Ridge')
+    return model
