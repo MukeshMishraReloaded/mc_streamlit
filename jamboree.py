@@ -125,10 +125,6 @@ st.write("Please enter your TOEFL score")
 # Using number_input to get a float value
 t = st.number_input("Input a TOEFL score", min_value=0.0, max_value=120.0, value=0.0, step=0.3)
 
-#Check the first few rows
-#st.subheader(f"The first couple of rows of the dataset are as follows for your reference: ")
-#st.write(df.head(2))
-
 df_1=df.copy()
 df_1.drop(['Serial No.'], axis=1, inplace=True)
 
@@ -153,6 +149,15 @@ if st.button('Submit'):
         st.subheader(f"Chance of admission is weak!")
     else:
         st.subheader(f"The chance is bleak!")
+
+
+st.write("                                                                                           
+                                                                                                    
+                                                                                 ")
+#Check the first few rows
+st.subheader(f"The first couple of rows of the dataset are as follows for your reference: ")
+st.write(df.head(2))
+
 #Converting Research, SOP, LOR and Uni. Rating as categorical values
 
 df['Research'] = df['Research'].astype('category')
