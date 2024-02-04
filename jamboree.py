@@ -52,18 +52,20 @@ with col4:
 
 st.write("Please enter your CGPA!")
 # Using number_input to get a float value
-cgpa = st.number_input("Input a CGPA", min_value=0.0, max_value=10.0, value=0.0, step=0.1)
+c = st.number_input("Input a CGPA", min_value=0.0, max_value=10.0, value=0.0, step=0.1)
 
 st.write("Please enter your GRE score")
 # Using number_input to get a float value
-gre_score = st.number_input("Input a GRE score", min_value=260.00, max_value=340.00, value=260.0, step=0.01)
+g = st.number_input("Input a GRE score", min_value=260.00, max_value=340.00, value=260.0, step=0.01)
 
 st.write("Please enter your TOEFL score")
 # Using number_input to get a float value
-toefl_score = st.number_input("Input a TOEFL score", min_value=0.0, max_value=120.0, value=0.0, step=0.01)
+t = st.number_input("Input a TOEFL score", min_value=0.0, max_value=120.0, value=0.0, step=0.01)
+
 
 #Check the first few rows
-st.write(f"The first few rows of dataset are as follows: ")
+st.subheader(f"
+                The first few rows of dataset are as follows: ")
 st.write(df.head(2))
 
 df_1=df.copy()
