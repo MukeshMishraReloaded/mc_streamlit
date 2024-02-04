@@ -30,7 +30,7 @@ st.header(f"""
                             Jamboree student admissions       
                   """)
 
-col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
+col1, col2 = st.columns(2)
 with col1:
     s = st.selectbox(
         'Please select a value for Statement of Purpose (SOP)',
@@ -39,6 +39,8 @@ with col2:
     l = st.selectbox(
         'Please select a value for strength of Letter of Recommendation (LOR)',
             (4.5, 3.5, 2.5, 3.0, 4.0, 1.5, 2.0, 5.0, 1.0))
+
+col3, col4 = st.columns(2)
 with col3:
     r1 = st.selectbox(
         'Please select 1 if the student has research experience',
